@@ -1,0 +1,25 @@
+<p>Drag-and-Drop com Tabela Simples!</p>
+
+<cds-table-container>
+  <cds-table-header>
+    <h4 cdsTableHeaderTitle>Tabela com Drag-and-Drop</h4>
+  </cds-table-header>
+
+  <div
+    cdkDropList
+    class="cds-table"
+    (cdkDropListDropped)="dropTable($event)"
+  >
+    <div *ngFor="let row of tableModel.data; let i = index" cdkDrag class="cds-table-row">
+      <div class="cds-table-cell">
+        {{ row[0].data }}
+      </div>
+      <div class="cds-table-cell">
+        {{ row[1].data }}
+      </div>
+      <div class="cds-table-cell">
+        {{ row[2].data }}
+      </div>
+    </div>
+  </div>
+</cds-table-container>
